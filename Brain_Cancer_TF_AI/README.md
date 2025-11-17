@@ -85,6 +85,11 @@ The CNN model consists of:
 * https://www.tensorflow.org/tutorials/images/cnn?hl=pl
 * https://keras.io/api/data_loading/image
 
+## Example outputs
+<img width="564" height="407" alt="image" src="https://github.com/user-attachments/assets/3d04d44f-58f3-4612-b251-458143c29e05" />
+<img width="777" height="622" alt="image" src="https://github.com/user-attachments/assets/5cb23451-47ad-424d-aa36-805950cb74c3" />
+
+
 Authors: Kacper Andrzejewski and collaborators mentioned before
 Project Type: Deep Learning / Image Classification / AI / Convolutional Neural Network
 
