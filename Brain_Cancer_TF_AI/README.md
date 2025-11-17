@@ -21,7 +21,18 @@ Brain_Cancer_TF_AI/
 └── README.md # this file  
 
 > **Note:** The dataset is **not included** in this repository due to its size. To get the dataset, click on URL below and download data to your local device  
-URLURLURLURLURLURLURLURL
+
+https://drive.google.com/drive/folders/19FRUtOCDf6yd7PUP5lGurRDn0h1uYFAO?usp=sharing
+
+To upload data with Python use this commands:
+```bash
+import gdown
+
+# ID_PLIKU to część linku pomiędzy /d/ a /view
+url = 'https://drive.google.com/uc?id=ID_PLIKU'
+output = 'dataset'
+gdown.download(url, output, quiet=False)
+```
 
 ### **Dataset Requirements**
 
