@@ -24,14 +24,6 @@ Brain_Cancer_TF_AI/
 
 https://drive.google.com/drive/folders/19FRUtOCDf6yd7PUP5lGurRDn0h1uYFAO?usp=sharing
 
-To upload data with Python use this commands:
-```bash
-import gdown
-url = 'https://drive.google.com/uc?id=ID_PLIKU'
-output = 'dataset'
-gdown.download(url, output, quiet=False)
-```
-
 ### **Dataset Requirements**
 
 The dataset must follow this structure:
