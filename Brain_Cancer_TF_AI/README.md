@@ -27,8 +27,6 @@ https://drive.google.com/drive/folders/19FRUtOCDf6yd7PUP5lGurRDn0h1uYFAO?usp=sha
 To upload data with Python use this commands:
 ```bash
 import gdown
-
-# ID_PLIKU to część linku pomiędzy /d/ a /view
 url = 'https://drive.google.com/uc?id=ID_PLIKU'
 output = 'dataset'
 gdown.download(url, output, quiet=False)
