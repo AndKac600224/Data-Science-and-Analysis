@@ -5,7 +5,7 @@
 This project contains a complete data analysis project focused on the Titanic passenger dataset.  
 It demonstrates data preprocessing, exploratory data analysis (EDA), statistical methods, and visualizations using the R programming language.
 
-The project was originally created as an academic assignment and now serves as part of a broader Data Science portfolio. This was one of my first projects (done at the begginingof studies) and it presents my first steps in Data Science.
+The project was originally created as an academic assignment and now serves as part of a broader Data Science portfolio. This was one of my first projects (done at the beggining of studies) and it presents my first steps in Data Science.
 
 ---
 
