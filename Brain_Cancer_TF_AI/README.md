@@ -1,9 +1,9 @@
 ## Collaborators:
 * @AndKac600224
-* 
-*
-*
-*
+* @victoriabelz
+* @czopnatalia
+* @Karo2604
+* @JakubHus
 
 # Image Classification using Convolutional Neural Networks (CNN)
 
