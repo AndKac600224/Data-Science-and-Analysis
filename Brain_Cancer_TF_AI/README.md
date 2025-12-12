@@ -79,7 +79,6 @@ The CNN model consists of:
 * Ensure that your dataset paths match the expected structure in train_model.py and eval_model.py.
 * You can experiment with hyperparameters such as learning rate, batch size, and epochs inside the training script.
 * For large datasets, training may take significant time; GPU is recommended.
-* 
 
 ## References
 * https://www.tensorflow.org/guide/keras?hl=pl
