@@ -26,7 +26,7 @@ Developed as part of the **Data Analysis & Machine Learning** curriculum at **AG
 ## Data Source & Structure
 
 The analysis is based on the **Student Performance Dataset**, a synthetic dataset widely used for benchmarking regression and clustering algorithms.
-* **Origin:** [Kaggle: Student Performance Prediction](https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-regression)
+* **Origin:** [Kaggle: Student Performance Prediction](https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression)
 * **Size:** 10,000 observations.
 * **Features:**
     * `Hours Studied`: Number of hours spent studying.
