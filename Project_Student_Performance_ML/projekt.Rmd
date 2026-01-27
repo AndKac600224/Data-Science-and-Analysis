@@ -1,7 +1,3 @@
----
-output:
-  output: github_document
----
 ## Projekt dotyczący metod klasyfikacji zbioru danych  Student Performance
 Kacper Andrzejewski 419925, gr. 1, IAD rok 3 AGH
   
@@ -375,5 +371,6 @@ aggregate(cbind(Hours.Studied, Extracurricular.Activities, Previous.Scores, Slee
 * Stuprocentowa dokładność (Accuracy) modelu kNN (1.0) potwierdza, że granice między grupami są ostre i jednoznaczne dla algorytmu.  
 
 #### Mimo tej *perfekcji* matematycznej, analiza profilowania ujawniła paradoks decyzyjny: średni wskaźnik wydajności (*Performance Index*) dla obu grup jest niemal identyczny (54.7 vs 55.4). Szczegółowe zestawienie średnich pozwoliło zidentyfikować główną przyczynę tego podziału – algorytmy dokonały segregacji studentów niemal wyłącznie na podstawie zmiennej binarnej *Extracurricular Activities*. Klaster 1 grupuje wyłącznie osoby niebiorące udziału w zajęciach dodatkowych, natomiast Klaster 2 to studenci aktywni pozalekcyjnie. Granica ta, ze względu na naturę tej zmiennej, jest na tyle oczywista, że model osiągnął bardzo dobre rezultaty (wspomniane wyżej). Jednakże, ze względu na podobne średnie wartości wskaźnika wydajności w obu klastrach, udział w zajęciach dodatkowych (który tak silnie różnicuje styl życia studentów) nie przekłada się na lepsze wyniki w nauce w tym zbiorze danych.
+
 
 #### Ostatecznie, projekt udowodnił skuteczność metod klasyfikacji w rozpoznawaniu wzorców zachowań, jednocześnie obalając prostą zależność między badanymi nawykami a efektywnością nauki w tej konkretnej populacji.
