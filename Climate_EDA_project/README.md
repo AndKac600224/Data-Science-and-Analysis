@@ -99,8 +99,8 @@ from sklearn.linear_model import LinearRegression
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/YourUsername/fitness-stream-project.git
-    cd fitness-stream-project
+    git clone https://github.com/AndKac600224/Climate_EDA_project.git
+    cd Climate_EDA_project
     ```
 2.  **Prerequisites:**
     Install required packages:
