@@ -1,8 +1,8 @@
-# ERA5 Climate Reanalysis & Predictive Modeling (2010–2024)
+# ERA5 Climate Analysis: Trends & ML Feasibility Study (2010–2024)
 
 ![Project Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)
-![Machine Learning](https://img.shields.io/badge/Focus-EDA%20%26%20Predictive%20Modeling-orange?style=flat-square)
+![Focus](https://img.shields.io/badge/Focus-Advanced%20EDA%20%26%20Strategy-orange?style=flat-square)
 ![Institution](https://img.shields.io/badge/Institution-AGH%20UST-red?style=flat-square)
 ![Data Source](https://img.shields.io/badge/Data-CDS%20Copernicus%20ERA5-green?style=flat-square)
 
@@ -14,106 +14,90 @@
 
 ## Executive Summary
 
-This project delivers a comprehensive **Exploratory Data Analysis (EDA)** and **Machine Learning (ML)** study focusing on meteorological trends in **Lublin, Poland**, over a 15-year period (2010–2024).
+This project delivers a rigorous **Exploratory Data Analysis (EDA)** of meteorological conditions in **Lublin, Poland**, spanning a 15-year period (2010–2024). Utilizing high-fidelity **ERA5 Reanalysis data** from the **Copernicus Climate Change Service (CDS)**, the study identifies critical climatic trends, anomalies, and correlations.
 
-The analysis relies on high-fidelity **ERA5 Reanalysis data** retrieved from the **Copernicus Climate Change Service (C3S) Climate Data Store (CDS)**. The primary objective was to investigate climatic anomalies (warming trends) and build robust regression models to forecast air temperature based on atmospheric parameters.
-
-The study was conducted as part of the advanced **Machine Learning curriculum** at the **AGH University of Cracow (Akademia Górniczo-Hutnicza)** in Kraków. It demonstrates end-to-end data science capabilities: from raw data ingestion and feature engineering to model evaluation and environmental impact assessment.
+Beyond statistical analysis, the accompanying engineering report provides a **theoretical framework and feasibility assessment** for implementing Machine Learning models. It outlines how historical data patterns can be leveraged to build predictive systems for temperature forecasting and extreme weather alert systems in future iterations.
 
 ## Business & Scientific Objectives
 
-* **Climatic Trend Analysis:** To statistically validate the impact of global warming on local weather patterns, specifically identifying warming trends and temperature inversions.
-* **Predictive Modeling:** To develop algorithms capable of estimating Air Temperature (`t2m`) using features like atmospheric pressure, wind vectors, and solar radiation.
-* **Urban Planning Insights:** To provide data-driven recommendations for city planning (Blue-Green Infrastructure) to mitigate Urban Heat Islands.
+* **Climatic Trend Validation:** Statistical confirmation of global warming impacts on the local microclimate, including the frequency of temperature inversions.
+* **Data-Driven Urban Planning:** Providing empirical evidence to support **Blue-Green Infrastructure** initiatives (e.g., increasing biologically active areas) to mitigate Urban Heat Islands.
+* **ML Readiness Assessment:** Evaluating data quality and feature correlations (e.g., Solar Radiation vs. Temperature) to propose a robust architecture for future regression modeling (Random Forest/Gradient Boosting).
 
 ## Data Source & Architecture
 
-The dataset is derived from the **ERA5 hourly data on single levels**, provided by the **Copernicus Climate Data Store (CDS)**. ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate.
+The dataset is derived from the **ERA5 hourly data on single levels**, provided by the **Copernicus Climate Data Store (CDS)**.
 
 * **Source:** [Copernicus Climate Data Store (ERA5)](https://cds.climate.copernicus.eu/)
 * **Temporal Scope:** January 2010 – December 2024.
-* **Granularity:** 6-hour intervals (00:00, 06:00, 12:00, 18:00).
+* **Granularity:** 6-hour intervals (Synoptic hours: 00:00, 06:00, 12:00, 18:00).
 * **Format:** Processed from raw GRIB to structured CSV.
-* **Key Features:**
+* **Key Variables:**
     * `t2m`: 2-meter Temperature (Target Variable).
     * `sp` / `msl`: Surface Pressure / Mean Sea Level Pressure.
-    * `u10` / `v10`: 10-meter Wind Components (Zonal/Meridional).
+    * `u10` / `v10`: 10-meter Wind Components (Vector decomposition).
     * `tp`: Total Precipitation.
     * `tcc`: Total Cloud Cover.
     * `ssrd`: Surface Solar Radiation Downwards.
 
-## Methodology & Tech Stack
+## Methodology
 
-The project follows the standard **CRISP-DM** lifecycle tailored for scientific research.
+The project follows the **Data Understanding** and **Data Preparation** phases of the CRISP-DM lifecycle.
 
 ### 1. Data Engineering & Preprocessing
 * **Unit Standardization:** Conversion of Kelvin to Celsius (`t2m`) and Pascals to hPa (`sp`).
-* **Vector Transformation:** Engineered a scalar `Wind Speed` feature from `u10` and `v10` vectors using Euclidean norm.
-* **Temporal Features:** Extracted cyclical time features (Year, Month, Day, Hour) to capture seasonality.
-* **Outlier Management:** Applied Interquartile Range (IQR) method to detect and handle anomalies in pressure and wind readings.
+* **Feature Extraction:**
+    * Calculation of scalar `Wind Speed` from `u10` and `v10` vectors.
+    * Extraction of cyclical temporal features (Year, Month, Day, Hour) to capture seasonality.
+* **Quality Assurance:** Detection of outliers using the Interquartile Range (IQR) method, specifically for pressure anomalies and wind extremes.
 
-### 2. Exploratory Data Analysis (EDA)
-* **Correlation Matrices:** Utilized Pearson correlation heatmaps to identify multicollinearity (e.g., strong `sp` vs. `msl` relationship) and feature importance.
-* **Distribution Analysis:** KDE plots and Histograms to assess normality (Gaussian distribution checks).
-* **Time-Series Decomposition:** Visualized long-term temperature progression and seasonal fluctuations.
+### 2. Advanced Exploratory Data Analysis (EDA)
+* **Correlation Mapping:** Pearson correlation heatmaps revealed strong dependencies between Solar Radiation (`ssrd`), Dew Point (`d2m`), and Air Temperature (`t2m`), establishing a solid baseline for future feature selection.
+* **Distribution Analysis:** Histograms and KDE plots verified the non-Gaussian distribution of precipitation and cloud cover.
+* **Trend Analysis:** Visual decomposition of time series confirmed a rising mean temperature trend over the 2010–2024 interval.
 
-### 3. Machine Learning Strategy
-The core task was **Regression Analysis** to predict Temperature (`t2m`). The dataset was split into training and testing sets with **StandardScaler** applied for normalization.
+### 3. Proposed ML Architecture (Feasibility Study)
+*As detailed in the final section of the Engineering Report (`.docx`), a predictive strategy was designed based on the EDA findings.*
 
-**Models Implemented & Evaluated:**
-* Linear Regression (Baseline)
-* Decision Tree Regressor
-* **Random Forest Regressor** (Ensemble)
-* **Gradient Boosting Regressor** (Ensemble - Best Performer)
-* Support Vector Regressor (SVR)
+* **Proposed Goal:** Regression analysis to forecast `t2m`.
+* **Recommended Algorithms:** Ensemble methods (**Random Forest**, **Gradient Boosting**) are suggested over linear models due to the non-linear nature of atmospheric interactions (e.g., cloud cover vs. radiation).
+* **Expected Metrics:** The study defines success criteria based on $R^2$ and MAE (Mean Absolute Error) for future implementation.
 
-**Evaluation Metrics:**
-* $R^2$ (Coefficient of Determination)
-* MSE (Mean Squared Error)
-* MAE (Mean Absolute Error)
+## Key Findings
 
-## Key Insights & Results
-
-* **Model Performance:** Ensemble methods (Random Forest, Gradient Boosting) significantly outperformed linear models, capturing the non-linear interactions between solar radiation (`ssrd`), cloud cover (`tcc`), and temperature.
-* **Climate Observations:** The analysis confirmed a rising temperature trend in the studied period, aligning with global climate change models.
-* **Feature Importance:** `ssrd` (Solar Radiation) and `d2m` (Dew Point) were identified as the most critical predictors for air temperature.
+* **Warming Trend:** A statistically significant increase in average annual temperatures was observed, aligning with global climate change models.
+* **Urban Heat Island Mitigation:** The analysis supports the hypothesis that increasing urban vegetation and water bodies (evapotranspiration) is critical for temperature regulation.
+* **Data Quality for ML:** The dataset demonstrates high consistency and strong signal-to-noise ratio in key features (`ssrd`, `d2m`), making it highly suitable for training supervised learning models.
 
 ## Technologies
 
-The project utilizes the Python Data Science ecosystem:
+The project utilizes the Python Data Science ecosystem for analysis and visualization:
 
 ```python
-# Core Analysis
+# Core Data Processing
 import pandas as pd
 import numpy as np
 
-# Visualization
+# Visualization & Reporting
 import matplotlib.pyplot as plt
 import seaborn as sns
-
-# Machine Learning (Scikit-Learn)
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.svm import SVR
-from sklearn.linear_model import LinearRegression
 ```
 
 ## Getting Started
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/YourUsername/ERA5-Climate-ML-Analysis.git](https://github.com/YourUsername/ERA5-Climate-ML-Analysis.git)
-    cd ERA5-Climate-ML-Analysis
+    git clone [https://github.com/AndKac600224/Data-Science-and-Analysis.git](https://github.com/AndKac600224/Data-Science-and-Analysis.git)
+    cd Data-Science-and-Analysis/Climate_EDA_project
     ```
 2.  **Prerequisites:**
     Install required packages:
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn
+    pip install pandas numpy matplotlib seaborn
     ```
 3.  **Run the Analysis:**
     Launch Jupyter Notebook:
-    ```bash
+    ```
     jupyter notebook projektEDA_ML_rob.ipynb
     ```
 
@@ -121,17 +105,17 @@ from sklearn.linear_model import LinearRegression
 
 | File | Description |
 | :--- | :--- |
-| `projektEDA_ML_rob.ipynb` | **Main Kernel**. Contains data cleaning, EDA visualizations, and ML modeling code. |
-| `projektEDA_ML.docx` | **Engineering Report (PL)**. Full academic documentation, theoretical background, and detailed conclusions. |
-| `dane_grib_era5.csv` | **Dataset**. Processed ERA5 meteorological data used for training. |
+| `projektEDA_ML_rob.ipynb` | **Main Kernel**. Code for data cleaning, preprocessing, and extensive EDA visualizations. |
+| `projektEDA_ML.docx` | **Engineering Report (PL)**. Contains the full academic study, theoretical background, conclusions, and the **Machine Learning implementation proposal**. |
+| `dane_grib_era5.csv` | **Dataset**. Processed ERA5 meteorological data used for the analysis. |
 
-##  Author
+## Author
 
 **Kacper Andrzejewski**
 * **Institution:** AGH University of Science and Technology
-* **Course:** Machine Learning & Data Analysis
+* **Project Type:** EDA & Machine Learning Feasibility Study
 * **Contact:** [GitHub Profile](https://github.com/AndKac600224)
 
 ---
-*Attribution: This project contains modified Copernicus Climate Change Service information [2025].*
+*Attribution: This project contains modified Copernicus Climate Change Service information [2025]. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.*
 ```
