@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)
 ![Machine Learning](https://img.shields.io/badge/Focus-EDA%20%26%20Predictive%20Modeling-orange?style=flat-square)
 ![Institution](https://img.shields.io/badge/Institution-AGH%20UST-red?style=flat-square)
+![Data Source](https://img.shields.io/badge/Data-CDS%20Copernicus%20ERA5-green?style=flat-square)
 
 > **ℹ️ Language Note / Uwaga Językowa:**
 > While this documentation is presented in English for professional accessibility, the source code (`.ipynb`) and the comprehensive engineering report (`.docx`) are written in **Polish**.
@@ -13,23 +14,26 @@
 
 ## Executive Summary
 
-This project delivers a comprehensive **Exploratory Data Analysis (EDA)** and **Machine Learning (ML)** study focusing on meteorological trends in **Lublin, Poland**, over a 15-year period (2010–2024). Utilizing high-fidelity reanalysis data from the **ERA5 dataset** (Copernicus Climate Change Service), the project aims to identify climatic anomalies and build robust regression models for temperature forecasting.
+This project delivers a comprehensive **Exploratory Data Analysis (EDA)** and **Machine Learning (ML)** study focusing on meteorological trends in **Lublin, Poland**, over a 15-year period (2010–2024).
 
-The study was conducted as part of the advanced **Machine Learning curriculum** at the **AGH University of Science and Technology (Akademia Górniczo-Hutnicza)** in Kraków. It demonstrates end-to-end data science capabilities: from raw data ingestion and feature engineering to model evaluation and environmental impact assessment.
+The analysis relies on high-fidelity **ERA5 Reanalysis data** retrieved from the **Copernicus Climate Change Service (C3S) Climate Data Store (CDS)**. The primary objective was to investigate climatic anomalies (warming trends) and build robust regression models to forecast air temperature based on atmospheric parameters.
+
+The study was conducted as part of the advanced **Machine Learning curriculum** at the **AGH University of Cracow (Akademia Górniczo-Hutnicza)** in Kraków. It demonstrates end-to-end data science capabilities: from raw data ingestion and feature engineering to model evaluation and environmental impact assessment.
 
 ## Business & Scientific Objectives
 
-* **Climatic Trend Analysis:** To statistically validate the impact of global warming on local weather patterns (identifying warming trends and temperature inversions).
-* **Predictive Modeling:** To develop algorithms capable of estimating Air Temperature (`t2m`) based on atmospheric pressure, wind vectors, and solar radiation.
+* **Climatic Trend Analysis:** To statistically validate the impact of global warming on local weather patterns, specifically identifying warming trends and temperature inversions.
+* **Predictive Modeling:** To develop algorithms capable of estimating Air Temperature (`t2m`) using features like atmospheric pressure, wind vectors, and solar radiation.
 * **Urban Planning Insights:** To provide data-driven recommendations for city planning (Blue-Green Infrastructure) to mitigate Urban Heat Islands.
 
-## Data Architecture
+## Data Source & Architecture
 
-The dataset is derived from **ECMWF ERA5 Reanalysis**, providing a consistent view of the atmosphere over decades.
+The dataset is derived from the **ERA5 hourly data on single levels**, provided by the **Copernicus Climate Data Store (CDS)**. ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate.
 
+* **Source:** [Copernicus Climate Data Store (ERA5)](https://cds.climate.copernicus.eu/)
 * **Temporal Scope:** January 2010 – December 2024.
 * **Granularity:** 6-hour intervals (00:00, 06:00, 12:00, 18:00).
-* **Format:** Processed from GRIB to structured CSV.
+* **Format:** Processed from raw GRIB to structured CSV.
 * **Key Features:**
     * `t2m`: 2-meter Temperature (Target Variable).
     * `sp` / `msl`: Surface Pressure / Mean Sea Level Pressure.
@@ -99,8 +103,8 @@ from sklearn.linear_model import LinearRegression
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/AndKac600224/Climate_EDA_project.git
-    cd Climate_EDA_project
+    git clone [https://github.com/YourUsername/ERA5-Climate-ML-Analysis.git](https://github.com/YourUsername/ERA5-Climate-ML-Analysis.git)
+    cd ERA5-Climate-ML-Analysis
     ```
 2.  **Prerequisites:**
     Install required packages:
@@ -113,7 +117,7 @@ from sklearn.linear_model import LinearRegression
     jupyter notebook projektEDA_ML_rob.ipynb
     ```
 
-## 📄 Repository Structure
+## Repository Structure
 
 | File | Description |
 | :--- | :--- |
@@ -121,7 +125,7 @@ from sklearn.linear_model import LinearRegression
 | `projektEDA_ML.docx` | **Engineering Report (PL)**. Full academic documentation, theoretical background, and detailed conclusions. |
 | `dane_grib_era5.csv` | **Dataset**. Processed ERA5 meteorological data used for training. |
 
-## 👤 Author
+##  Author
 
 **Kacper Andrzejewski**
 * **Institution:** AGH University of Science and Technology
@@ -129,5 +133,5 @@ from sklearn.linear_model import LinearRegression
 * **Contact:** [GitHub Profile](https://github.com/AndKac600224)
 
 ---
-*© 2026 Kacper Andrzejewski. Project created for educational purposes.*
+*Attribution: This project contains modified Copernicus Climate Change Service information [2025].*
 ```
