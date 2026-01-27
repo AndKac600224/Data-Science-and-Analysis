@@ -87,7 +87,7 @@ import seaborn as sns
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/AndKac600224/Data-Science-and-Analysis.git](https://github.com/AndKac600224/Data-Science-and-Analysis.git)
+    git clone https://github.com/AndKac600224/Data-Science-and-Analysis.git
     cd Data-Science-and-Analysis/Climate_EDA_project
     ```
 2.  **Prerequisites:**
