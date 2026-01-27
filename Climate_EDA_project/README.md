@@ -112,7 +112,7 @@ import seaborn as sns
 ## Author
 
 **Kacper Andrzejewski**
-* **Institution:** AGH University of Science and Technology
+* **Institution:** AGH University of Cracow
 * **Project Type:** EDA & Machine Learning Feasibility Study
 * **Contact:** [GitHub Profile](https://github.com/AndKac600224)
 
