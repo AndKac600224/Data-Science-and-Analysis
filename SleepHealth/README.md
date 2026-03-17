@@ -53,11 +53,11 @@ Using **Random Forest Feature Importance**, the analysis revealed that the most 
 
 ### Feature Importance
 *This chart shows which variables had the most impact on the model's decisions.*
-![Feature Importance]([<img width="985" height="547" alt="image" src="https://github.com/user-attachments/assets/b8626cb3-0539-445a-9f3e-9470f0f6490c" />])
+([<img width="985" height="547" alt="image" src="https://github.com/user-attachments/assets/b8626cb3-0539-445a-9f3e-9470f0f6490c" />])
 
 ### Confusion Matrix
 *The model's performance on unseen data—only 3 misclassifications out of 75 cases.*
-![Confusion Matrix]([<img width="611" height="455" alt="image" src="https://github.com/user-attachments/assets/65329fc1-4239-4361-aaf4-b3998300109b" />])
+([<img width="611" height="455" alt="image" src="https://github.com/user-attachments/assets/65329fc1-4239-4361-aaf4-b3998300109b" />])
 
 ## 💡 How to Run
 1. Clone the repository: `git clone https://github.com/[Andkac600224]/SleepHealth.git`
